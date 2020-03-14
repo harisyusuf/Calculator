@@ -1,53 +1,70 @@
 using System;
 
-namespace Calculator{
-	public class Calculator{
-		public void Main(string[] args){
-			int a;
-			int b;
-			int pil;
+namespace Calculator
+{
+        class Calculator {
 
-			Console.WriteLine("Pilihan menu Calculator \n");
-			Console.WriteLine("1. Penambahan \n");
-			Console.WriteLine("2. Pengurangan \n");
-			Console.WriteLine("3. Perkalian \n");
-			Console.WriteLine("4. Pembagian \n");
-			Console.WriteLine("Masukan pilihan menu : ");
-			pil = Convert.ToInt32(Console.ReadLine()); 
-			
-			Console.WriteLine("Masukan nilai A : ");
-			a = Convert.ToInt32(Console.ReadLine());
-			
-			Console.WriteLine("Masukan nilai B : ");
-			b = Convert.ToInt32(Console.ReadLine());
+            static void Main(string[] args) { 
 
-			if(pil == 1){
-				Console.WriteLine("Hasil penambahan: {0} + {1} = {2}", a,b, Penambahan(a,b));
-			}
-			if(pil == 2){
-				Console.WriteLine("Hasil penambahan: {0} + {1} = {2}", a,b, Pengurangan(a,b));
-			}
-			if(pil == 3){
-				Console.WriteLine("Hasil penambahan: {0} + {1} = {2}", a,b, Perkalian(a,b));
-			}
-			if(pil == 4){
-				Console.WriteLine("Hasil penambahan: {0} + {1} = {2}", a,b, Pembagian(a,b));
-			}
-		}
-		
-		static int Penambahan(int a, int b){
-			return a + b;
-		}
-		static int Pengurangan(int a, int b){
-			return a - b;
-		}
-		static int Perkalian(int a, int b){
-			return a - b;
-		}
-		static int Pembagian(int a, int b){
-			return a - b;
-		}
+            Console.WriteLine("Pilih Menu Calculator");
 
-	}
-	
+            Console.WriteLine();
+
+            Console.WriteLine("1. Penambahan");
+            Console.WriteLine("2. Pengurangan");
+            Console.WriteLine("3. Perkalian");
+            Console.WriteLine("4. Pembagian");
+
+            Console.WriteLine();
+
+            Console.Write("Input Nomor Menu = ");
+            int opt = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+
+
+            if(opt == 1 || opt ==  2 || opt == 3 || opt == 4 ) {
+                Console.Write("Masukkan nilai 1 = ");
+                int a = int.Parse(Console.ReadLine());
+                Console.Write("Masukkan nilai 2 = ");
+                int b = int.Parse(Console.ReadLine());
+                    if(opt == 1) {
+                        Console.Write("Hasil Penambahan: {0} + {1} = {2}", a, b, Penambahan(a, b));
+                    } else if (opt == 2) {
+                        Console.Write("Hasil Pengurangan : " + a + " - " + b + " = " + Pengurangan(a, b));
+                    } else if (opt == 3)  {
+                        Console.Write("Hasil Perkalian : " + a + " x " + b + " = " + Perkalian(a, b));
+                    } else if (opt == 4) {
+                        Console.Write("Hasil Pembagian : " + a + " : " + b + " = " + Pembagian(a, b));
+                    }
+
+            }  else {
+                Console.Write("Maaf, Pilihan anda tidak tersedia!");
+            }
+            
+            Console.WriteLine();
+
+            Console.WriteLine("\nTekan sembarang key untuk keluar");
+            Console.ReadKey();
+            }
+            
+            static int Penambahan (int a, int b) {
+                return a + b;
+            }
+
+            static int Pengurangan (int a, int b) {
+                return a - b;
+            }
+
+            static int Perkalian (int a, int b) {
+                return a * b;
+            }
+
+            static int Pembagian (int a, int b) {
+                return a / b;
+            }
+
+    }
+
+    
 }
